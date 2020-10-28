@@ -1,8 +1,16 @@
-package com.ricoh.leetcode;
+package com.ricoh.leetcode.xlj;
 
 public class AddTwoNumbers {
+    /**
+     * 两数相加：因为数据采用倒序，如3 4 2 ，实际数为243，借此特性可以模拟竖式相加，
+     * 两个链表均从头部开始计算，如果超过10，则将carry进为1，加到下一个节点，模拟进位
+     * @param l1
+     * @param l2
+     * @return
+     */
     public static ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         ListNode head = null, tail = null;
+        //高位相加，如果大于10，则进一
         int carry = 0;
         while (l1 != null || l2 != null) {
             int n1 = l1 != null ? l1.val : 0;
@@ -22,7 +30,7 @@ public class AddTwoNumbers {
                 l2 = l2.next;
             }
         }
-        if (carry > 0) {
+        if (carry == 0) {
             tail.next = new ListNode(carry);
         }
         return head;
@@ -37,10 +45,19 @@ public class AddTwoNumbers {
     }
 }
 
+/**
+ * 模拟链表 重写toString()是为了打印数据 ，不重写会打印地址
+ */
 class ListNode {
     int val;
     ListNode next;
     ListNode(int val) { this.val = val; }
+
+    /**
+     * 可以直接进行当前节点赋值，next赋值
+     * @param val
+     * @param next
+     */
     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
 
     @Override

@@ -1,4 +1,4 @@
-package com.ricoh.leetcode;
+package com.ricoh.leetcode.xlj;
 
 import java.util.Arrays;
 
