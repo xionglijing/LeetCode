@@ -1,0 +1,1 @@
+package com.ricoh.leetcode.xlj;public class Palindrome {    public static void main(String[] args) {    }}
